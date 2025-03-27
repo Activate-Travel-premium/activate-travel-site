@@ -1,0 +1,1 @@
+document.getElementById('root').innerHTML = '<h1>Bienvenue sur ACTIVATE Travel Premium</h1>';
