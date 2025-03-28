@@ -58,3 +58,16 @@ a:hover {
   color: #fff; /* blanc au survol */
   text-decoration: underline;
 }
+.footer-links a {
+  color: #ff0;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.footer-links a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
