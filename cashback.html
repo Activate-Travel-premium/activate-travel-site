@@ -1,1 +1,63 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simulateur de Cashback</title>
+  <style>
+    body {
+      background-color: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      text-align: center;
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+    input {
+      width: 200px;
+    }
+    button {
+      background-color: yellow;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #00ffcc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Simulateur de Cashback</h1>
+  <p>Entre le montant de ta réservation pour voir combien tu récupères :</p>
+  <input type="number" id="amount" placeholder="Montant en €" />
+  <button onclick="calculateCashback()">Calculer</button>
+  <div id="result"></div>
+
+  <script>
+    function calculateCashback() {
+      const amount = parseFloat(document.getElementById('amount').value);
+      if (!amount || amount <= 0) {
+        document.getElementById('result').innerText = "Entre un montant valide.";
+        return;
+      }
+
+      const cashback = amount * 0.08; // 8%
+      const points = amount * 0.05;   // 5%
+
+      document.getElementById('result').innerHTML = `
+        Tu gagnes <strong>${cashback.toFixed(2)} €</strong> en cashback<br/>
+        et <strong>${points.toFixed(2)}</strong> Activate Points !
+      `;
+    }
+  </script>
+</body>
+</html>
