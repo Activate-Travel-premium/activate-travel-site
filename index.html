@@ -1,39 +1,21 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ACTIVATE Travel Premium</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1>ACTIVATE Travel Premium</h1>
-    <p class="slogan">Voyage de rêve. Cashback. Foi. Technologie.</p>
-    <button onclick="location.href='/premium.html'" class="premium-button">Devenir Membre Premium</button>
-  </header>
+<section class="search">
+  <h2>Réserve ton prochain voyage</h2>
+  <input type="text" id="destination" placeholder="Destination, hôtel ou vol…" />
+  <button onclick="searchDestination()">Rechercher</button>
+</section>
 
-  <section class="search">
-    <h2>Réserve ton prochain voyage</h2>
-    <input type="text" placeholder="Destination, hôtel ou vol..." />
-    <button>Rechercher</button>
-  </section>
+<script>
+  function searchDestination() {
+    const query = document.getElementById("destination").value.trim();
+    if (!query) {
+      alert("Merci d’entrer une destination.");
+      return;
+    }
 
-  <section class="horeb">
-    <h2>Assistant IA Horeb</h2>
-    <p>Besoin d’idées ? Horeb te guide selon ton mood spirituel ou détente.</p>
-  </section>
-
-  <section class="temoignages">
-    <h2>Témoignages</h2>
-    <blockquote>“J’ai économisé 312€ dès mon premier voyage avec ACTIVATE !”</blockquote>
-    <blockquote>“L’IA Horeb m’a fait découvrir une destination inattendue mais bénie !”</blockquote>
-  </section>
-
-  <footer>
-  <p>© 2025 ACTIVATE Travel Premium. Tous droits réservés.</p>
-  <div class="footer-links">
-    <a href="/cashback.html">Simuler mon Cashback</a>
-    <a href="/faq.html">Questions fréquentes</a>
-  </div>
-</footer>
+    // Pour l’instant on simule l’action
+    alert("Recherche en cours pour : " + query);
+    
+    // Plus tard : redirection vers une page de résultats
+    // location.href = `/recherche.html?q=${encodeURIComponent(query)}`;
+  }
+</script>
