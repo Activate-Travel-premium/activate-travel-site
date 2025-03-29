@@ -86,3 +86,65 @@ footer {
   color: #fff;
   text-decoration: underline;
 }
+/* --- Page Devenir Membre Premium --- */
+
+.premium-benefits {
+  margin: 40px auto;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #222;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.premium-benefits h2 {
+  color: #00ccff;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.premium-benefits ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.premium-benefits li {
+  background: #111;
+  margin: 10px 0;
+  padding: 10px;
+  border-left: 4px solid #FFD700;
+  font-size: 16px;
+}
+
+.cta {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.cta button {
+  background-color: #FFD700;
+  color: #000;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.cta button:hover {
+  background-color: #ffcc00;
+  color: #111;
+}
+
+.footer-link {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  color: #FFD700;
+  font-weight: bold;
+  text-decoration: none;
+}
+.footer-link:hover {
+  text-decoration: underline;
+}
