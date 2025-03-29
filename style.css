@@ -1,69 +1,86 @@
 body {
-  background-color: #111;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e'); /* Plage, soleil */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
 }
 
-header, section, footer {
-  padding: 20px;
-  text-align: center;
+header {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px 20px;
+    text-align: left;
+    padding-left: 10%;
 }
 
 h1 {
-  font-size: 32px;
-  color: #fff;
+    font-size: 2.8em;
+    margin-bottom: 0.2em;
 }
 
 .slogan {
-  font-size: 20px;
-  color: #0ff;
-  margin-top: 10px;
+    font-size: 1.2em;
+    color: #00d0ff;
 }
 
 button {
-  background-color: #ffd700;
-  border: none;
-  padding: 10px 15px;
-  font-weight: bold;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
+    background-color: #ffd700;
+    border: none;
+    padding: 12px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
 }
 
-button:hover {
-  background-color: #ffe033;
+section {
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 40px auto;
+    padding: 30px;
+    width: 80%;
+    border-radius: 12px;
 }
 
-input[type="text"] {
-  padding: 10px;
-  width: 250px;
-  border-radius: 5px;
-  border: none;
-  margin-right: 10px;
+.search {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-blockquote {
-  color: #ccc;
-  font-style: italic;
-  margin: 10px auto;
-  max-width: 600px;
+.search input {
+    padding: 10px;
+    width: 250px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
 }
 
-.footer-links {
-  margin-top: 30px;
+.search button {
+    padding: 10px 15px;
+    background-color: #FFD700;
+    font-weight: bold;
+}
+
+.temoignages blockquote {
+    font-style: italic;
+    margin: 10px 0;
+    color: #eee;
+}
+
+footer {
+    text-align: center;
+    margin-top: 60px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #ccc;
 }
 
 .footer-links a {
-  color: #ff0;
-  text-decoration: none;
-  font-weight: bold;
-  display: block;
-  margin-top: 8px;
-}
-
-.footer-links a:hover {
-  color: #fff;
-  text-decoration: underline;
+    color: #FFD700;
+    font-weight: bold;
+    margin: 0 10px;
+    text-decoration: none;
 }
