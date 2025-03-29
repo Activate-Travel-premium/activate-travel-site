@@ -40,6 +40,14 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
-</body>
+
+</body><script>
+  function rechercher() {
+    const destination = document.getElementById("destinationInput").value;
+    if (destination.trim() !== "") {
+      window.location.href = `resultats.html?query=${encodeURIComponent(destination)}`;
+    }
+  }
+</script>
+
 </html>
