@@ -1,16 +1,20 @@
 <section class="search">
   <h2>Réserve ton prochain voyage</h2>
-  <input type="text" id="destination" placeholder="Destination, hôtel ou vol…" />
-  <button onclick="searchDestination()">Rechercher</button>
+  <input type="text" id="searchInput" placeholder="Destination, hôtel ou vol...">
+  <button onclick="search()">Rechercher</button>
+  <div id="searchResult"></div>
 </section>
 
 <script>
-  function searchDestination() {
-    const query = document.getElementById("destination").value.trim();
+  function search() {
+    const query = document.getElementById('searchInput').value.trim();
+
     if (!query) {
-      alert("Merci d’entrer une destination.");
+      document.getElementById('searchResult').innerText = "Merci d'entrer une destination.";
       return;
     }
-    alert("Recherche en cours pour : " + query);
+
+    // Message temporaire en attendant l'intégration API
+    document.getElementById('searchResult').innerText = `🔍 Recherche en cours pour : "${query}" (fonctionnalité bientôt disponible)`;
   }
 </script>
