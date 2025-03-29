@@ -1,62 +1,105 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Simulateur de Cashback</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulateur de Cashback - ACTIVATE Travel Premium</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
     body {
-      background-color: #111;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center fixed;
+      background-size: cover;
       color: white;
-      font-family: Arial, sans-serif;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 20px;
+    }
+
+    header h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .slogan {
+      font-size: 20px;
+      color: #00bfff;
+    }
+
+    section {
+      background-color: rgba(0, 0, 0, 0.5);
+      margin: 20px auto;
       padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 800px;
       text-align: center;
     }
-    input, button {
+
+    input[type="number"] {
       padding: 10px;
-      margin: 10px;
+      border-radius: 5px;
+      border: none;
+      width: 200px;
+      margin: 10px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #ffd700;
+      color: #000;
       border: none;
       border-radius: 5px;
-    }
-    input {
-      width: 200px;
-    }
-    button {
-      background-color: yellow;
-      color: black;
-      font-weight: bold;
       cursor: pointer;
+      font-weight: bold;
     }
+
     #result {
-      margin-top: 20px;
-      font-size: 1.2em;
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
       color: #00ffcc;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      color: #ffd700;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
-  <h1>Simulateur de Cashback</h1>
-  <p>Entre le montant de ta réservation pour voir combien tu récupères :</p>
-  <input type="number" id="amount" placeholder="Montant en €" />
-  <button onclick="calculateCashback()">Calculer</button>
-  <div id="result"></div>
+  <header>
+    <h1>Simulateur de Cashback</h1>
+    <p class="slogan">Calcule combien tu gagnes en réservant avec ACTIVATE Travel Premium !</p>
+  </header>
+
+  <section>
+    <p>Entre le montant de ta réservation :</p>
+    <input type="number" id="amount" placeholder="Montant en €" />
+    <br />
+    <button onclick="calculateCashback()">Calculer</button>
+    <div id="result"></div>
+    <a href="index.html">← Retour à l'accueil</a>
+  </section>
 
   <script>
     function calculateCashback() {
-      const amount = parseFloat(document.getElementById('amount').value);
+      const amount = parseFloat(document.getElementById("amount").value);
       if (!amount || amount <= 0) {
-        document.getElementById('result').innerText = "Entre un montant valide.";
+        document.getElementById("result").innerHTML = "Merci d'entrer un montant valide.";
         return;
       }
 
-      const cashback = amount * 0.08; // 8%
-      const points = amount * 0.05;   // 5%
+      const cashback = amount * 0.08;
+      const points = amount * 0.05;
 
-      document.getElementById('result').innerHTML = `
-        Tu gagnes <strong>${cashback.toFixed(2)} €</strong> en cashback<br/>
-        et <strong>${points.toFixed(2)}</strong> Activate Points !
-      `;
+      document.getElementById("result").innerHTML =
+        `Tu gagnes <strong>${cashback.toFixed(2)} €</strong> en cashback et <strong>${points.toFixed(2)}</strong> Activate Points !`;
     }
   </script>
 </body>
