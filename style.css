@@ -1,6 +1,9 @@
-.search {
-  margin: 40px auto;
+body {
+  background-color: #111;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
   text-align: center;
+  padding: 40px 20px;
 }
 
 .search input {
@@ -14,7 +17,7 @@
 .search button {
   padding: 10px 15px;
   background-color: #FFD700;
-  color: black;
+  color: #000;
   font-weight: bold;
   border: none;
   border-radius: 5px;
