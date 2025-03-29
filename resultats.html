@@ -1,78 +1,68 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Résultats de recherche - ACTIVATE Travel Premium</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .results {
-      padding: 20px;
-      color: #fff;
-    }
-    .result-item {
-      background-color: #222;
-      margin-bottom: 15px;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.4);
-    }
-    .result-item h3 {
-      margin: 0 0 10px;
-      color: #0ff;
-    }
-    .result-item p {
-      margin: 5px 0;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Résultats de recherche - ACTIVATE Travel</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <h1>Résultats de recherche</h1>
-    <p id="destination-title"></p>
+    <p id="destination-result">Vols vers : ...</p>
   </header>
 
-  <main class="results" id="results-container">
-    <!-- Résultats dynamiques -->
+  <main id="results-container">
+    <!-- Résultats affichés ici dynamiquement -->
   </main>
 
-  <script>
-    // Récupérer le paramètre "query" de l'URL
-    const params = new URLSearchParams(window.location.search);
-    const query = params.get("query");
-    document.getElementById("destination-title").textContent = `Vols vers : ${query}`;
+  <footer>
+    <p>© 2025 ACTIVATE Travel Premium. Tous droits réservés.</p>
+    <div class="footer-links">
+      <a href="index.html">← Retour à l'accueil</a>
+    </div>
+  </footer>
 
-    // Faux résultats mock (à remplacer par des vrais depuis une API)
-    const mockResults = [
+  <script>
+    // 1. Récupère la destination depuis l’URL
+    const params = new URLSearchParams(window.location.search);
+    const destination = params.get("query");
+
+    // 2. Affiche la destination
+    document.getElementById("destination-result").textContent = `Vols vers : ${destination}`;
+
+    // 3. Données fictives (à remplacer par API plus tard)
+    const flights = [
       {
-        compagnie: "Air France",
-        depart: "Paris (CDG)",
-        arrivee: `${query} International` || "Destination",
-        prix: "134 €",
-        date: "15 avril 2025"
+        company: "Air France",
+        from: "Paris (CDG)",
+        to: `${destination} International`,
+        price: 134,
+        date: "15 avril 2025",
       },
       {
-        compagnie: "Transavia",
-        depart: "Paris (ORY)",
-        arrivee: `${query} Airport` || "Destination",
-        prix: "98 €",
-        date: "16 avril 2025"
-      }
+        company: "Transavia",
+        from: "Paris (ORY)",
+        to: `${destination} Airport`,
+        price: 98,
+        date: "16 avril 2025",
+      },
     ];
 
+    // 4. Affiche dynamiquement les vols
     const container = document.getElementById("results-container");
 
-    mockResults.forEach(result => {
-      const item = document.createElement("div");
-      item.className = "result-item";
-      item.innerHTML = `
-        <h3>${result.compagnie}</h3>
-        <p>Départ : ${result.depart}</p>
-        <p>Arrivée : ${result.arrivee}</p>
-        <p>Prix : <strong>${result.prix}</strong></p>
-        <p>Date : ${result.date}</p>
+    flights.forEach((flight) => {
+      const card = document.createElement("div");
+      card.className = "flight-card";
+      card.innerHTML = `
+        <h2>${flight.company}</h2>
+        <p>Départ : ${flight.from}</p>
+        <p>Arrivée : ${flight.to}</p>
+        <p>Prix : <strong>${flight.price} €</strong></p>
+        <p>Date : ${flight.date}</p>
       `;
-      container.appendChild(item);
+      container.appendChild(card);
     });
   </script>
 </body>
