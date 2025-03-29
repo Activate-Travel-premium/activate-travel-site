@@ -1,60 +1,69 @@
-/* Style général */
 body {
-    background-color: #111;
-    color: #fff;
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 20px;
+  background-color: #111;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-/* Titre principal */
+header, section, footer {
+  padding: 20px;
+  text-align: center;
+}
+
 h1 {
-    text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 20px;
+  font-size: 32px;
+  color: #fff;
 }
 
-/* Destination recherchée */
-#destinationResult {
-    text-align: center;
-    font-size: 1.3em;
-    color: #ccc;
-    margin-bottom: 30px;
+.slogan {
+  font-size: 20px;
+  color: #0ff;
+  margin-top: 10px;
 }
 
-/* Résultat de vol */
-.flight {
-    background-color: #222;
-    border-left: 4px solid #0ff;
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 600px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px #00000077;
+button {
+  background-color: #ffd700;
+  border: none;
+  padding: 10px 15px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
-/* Nom compagnie */
-.flight h3 {
-    color: #00f7ff;
-    margin-top: 0;
+button:hover {
+  background-color: #ffe033;
 }
 
-/* Détails du vol */
-.flight p {
-    margin: 5px 0;
-    font-size: 1.1em;
+input[type="text"] {
+  padding: 10px;
+  width: 250px;
+  border-radius: 5px;
+  border: none;
+  margin-right: 10px;
 }
 
-/* Lien retour */
-.back-link {
-    display: block;
-    text-align: center;
-    margin-top: 40px;
-    color: #FFD700;
-    font-weight: bold;
-    text-decoration: none;
+blockquote {
+  color: #ccc;
+  font-style: italic;
+  margin: 10px auto;
+  max-width: 600px;
 }
-.back-link:hover {
-    color: #fff;
-    text-decoration: underline;
+
+.footer-links {
+  margin-top: 30px;
+}
+
+.footer-links a {
+  color: #ff0;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  margin-top: 8px;
+}
+
+.footer-links a:hover {
+  color: #fff;
+  text-decoration: underline;
 }
