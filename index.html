@@ -9,4 +9,25 @@
 <body>
 
   <section class="search">
-    <h2>Ré
+    <h2>Réserve ton prochain voyage</h2>
+    <input type="text" id="destination" placeholder="Destination, hôtel ou vol..." />
+    <button onclick="search()">Rechercher</button>
+    <div id="searchResult"></div>
+  </section>
+
+  <script>
+    function search() {
+      const input = document.getElementById("destination").value.trim();
+      const result = document.getElementById("searchResult");
+
+      if (input === "") {
+        result.innerHTML = "Merci de saisir une destination.";
+        return;
+      }
+
+      result.innerHTML = `Recherche en cours pour : <strong>${input}</strong>`;
+    }
+  </script>
+
+</body>
+</html>
