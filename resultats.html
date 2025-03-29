@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Résultats de recherche - ACTIVATE Travel Premium</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .results {
+      padding: 20px;
+      color: #fff;
+    }
+    .result-item {
+      background-color: #222;
+      margin-bottom: 15px;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+    }
+    .result-item h3 {
+      margin: 0 0 10px;
+      color: #0ff;
+    }
+    .result-item p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Résultats de recherche</h1>
+    <p id="destination-title"></p>
+  </header>
+
+  <main class="results" id="results-container">
+    <!-- Résultats dynamiques -->
+  </main>
+
+  <script>
+    // Récupérer le paramètre "query" de l'URL
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get("query");
+    document.getElementById("destination-title").textContent = `Vols vers : ${query}`;
+
+    // Faux résultats mock (à remplacer par des vrais depuis une API)
+    const mockResults = [
+      {
+        compagnie: "Air France",
+        depart: "Paris (CDG)",
+        arrivee: `${query} International` || "Destination",
+        prix: "134 €",
+        date: "15 avril 2025"
+      },
+      {
+        compagnie: "Transavia",
+        depart: "Paris (ORY)",
+        arrivee: `${query} Airport` || "Destination",
+        prix: "98 €",
+        date: "16 avril 2025"
+      }
+    ];
+
+    const container = document.getElementById("results-container");
+
+    mockResults.forEach(result => {
+      const item = document.createElement("div");
+      item.className = "result-item";
+      item.innerHTML = `
+        <h3>${result.compagnie}</h3>
+        <p>Départ : ${result.depart}</p>
+        <p>Arrivée : ${result.arrivee}</p>
+        <p>Prix : <strong>${result.prix}</strong></p>
+        <p>Date : ${result.date}</p>
+      `;
+      container.appendChild(item);
+    });
+  </script>
+</body>
+</html>
