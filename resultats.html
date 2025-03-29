@@ -3,54 +3,98 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Résultats de recherche - ACTIVATE Travel Premium</title>
+  <title>ACTIVATE Travel Premium</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     body {
-      background-color: #111;
-      color: #fff;
-      font-family: Arial, sans-serif;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 40px 20px 20px;
+      text-align: left;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding-left: 60px;
+    }
+
+    header h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .slogan {
+      font-size: 20px;
+      color: #00bfff;
+    }
+
+    .cta-button {
+      background-color: #ffd700;
+      color: #000;
+      border: none;
+      padding: 12px 24px;
+      font-weight: bold;
+      border-radius: 5px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 20px 60px;
+    }
+
+    section {
+      background-color: rgba(0, 0, 0, 0.5);
       padding: 20px;
+      border-radius: 10px;
     }
 
-    h1 {
-      text-align: center;
+    section h2 {
       color: #fff;
     }
 
-    h2 {
+    .search input {
+      width: 70%;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      margin-right: 10px;
+    }
+
+    .search button {
+      padding: 10px 20px;
+      background-color: #ffd700;
+      color: #000;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    blockquote {
+      font-style: italic;
+      margin: 10px 0;
+    }
+
+    footer {
       text-align: center;
-      margin-top: 10px;
-      color: #ccc;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      margin-top: auto;
     }
 
-    .vol-card {
-      background-color: #222;
-      border: 1px solid #444;
-      border-radius: 8px;
-      padding: 15px;
-      margin: 20px auto;
-      width: 90%;
-      max-width: 600px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    }
-
-    .vol-card h3 {
-      color: #00ffff;
-      margin-bottom: 5px;
-    }
-
-    .vol-card p {
-      margin: 4px 0;
-      color: #ddd;
-    }
-
-    .retour {
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    .retour a {
+    .footer-links a {
+      display: inline-block;
+      margin: 0 10px;
       color: #ffd700;
       text-decoration: none;
       font-weight: bold;
@@ -58,52 +102,46 @@
   </style>
 </head>
 <body>
-  <h1>Résultats de recherche</h1>
-  <h2 id="destinationTitre"></h2>
+  <header>
+    <h1>ACTIVATE Travel Premium</h1>
+    <p class="slogan">Voyage de rêve. Cashback. Foi. Technologie.</p>
+    <button class="cta-button" onclick="location.href='/premium.html'">Devenir Membre Premium</button>
+  </header>
 
-  <div id="resultatsVols"></div>
+  <div class="container">
+    <section class="search">
+      <h2>Réserve ton prochain voyage</h2>
+      <input type="text" id="destinationInput" placeholder="Destination, hôtel ou vol..." />
+      <button onclick="rechercher()">Rechercher</button>
+    </section>
 
-  <div class="retour">
-    <a href="index.html">← Retour à l'accueil</a>
+    <section class="horeb">
+      <h2>Assistant IA Horeb</h2>
+      <p>Besoin d’idées ? Horeb te guide selon ton mood spirituel ou détente.</p>
+    </section>
+
+    <section class="temoignages" style="grid-column: span 2;">
+      <h2>Témoignages</h2>
+      <blockquote>“J’ai économisé 312€ dès mon premier voyage avec ACTIVATE !”</blockquote>
+      <blockquote>“L'IA Horeb m’a fait découvrir une destination inattendue mais bénie !”</blockquote>
+    </section>
   </div>
 
+  <footer>
+    <p>© 2025 ACTIVATE Travel Premium. Tous droits réservés.</p>
+    <div class="footer-links">
+      <a href="/cashback.html">Simuler mon Cashback</a>
+      <a href="/faq.html">Questions fréquentes</a>
+    </div>
+  </footer>
+
   <script>
-    const params = new URLSearchParams(window.location.search);
-    const destination = params.get("query");
-
-    document.getElementById("destinationTitre").innerText = `Vols vers : ${destination}`;
-
-    const vols = [
-      {
-        compagnie: "Air France",
-        depart: "Paris (CDG)",
-        arrivee: destination + " International",
-        prix: "134 €",
-        date: "15 avril 2025"
-      },
-      {
-        compagnie: "Transavia",
-        depart: "Paris (ORY)",
-        arrivee: destination + " Airport",
-        prix: "98 €",
-        date: "16 avril 2025"
+    function rechercher() {
+      const destination = document.getElementById("destinationInput").value;
+      if (destination.trim() !== "") {
+        window.location.href = `resultats.html?query=${encodeURIComponent(destination)}`;
       }
-    ];
-
-    const resultatsDiv = document.getElementById("resultatsVols");
-
-    vols.forEach(vol => {
-      const card = document.createElement("div");
-      card.className = "vol-card";
-      card.innerHTML = `
-        <h3>${vol.compagnie}</h3>
-        <p><strong>Départ :</strong> ${vol.depart}</p>
-        <p><strong>Arrivée :</strong> ${vol.arrivee}</p>
-        <p><strong>Prix :</strong> ${vol.prix}</p>
-        <p><strong>Date :</strong> ${vol.date}</p>
-      `;
-      resultatsDiv.appendChild(card);
-    });
+    }
   </script>
 </body>
 </html>
