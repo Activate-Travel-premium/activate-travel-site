@@ -1,4 +1,4 @@
-/* Réinitialisation de base */
+/* Reset de base */
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +11,7 @@ html, body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Vidéo en arrière-plan */
+/* Fond vidéo plein écran */
 .video-background {
   position: fixed;
   top: 0;
@@ -22,7 +22,7 @@ html, body {
   z-index: -1;
 }
 
-/* Contenu principal */
+/* Contenu centré */
 .content {
   position: relative;
   z-index: 1;
@@ -31,26 +31,27 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5); /* assombri pour lisibilité */
   color: white;
   text-align: center;
   padding: 20px;
 }
 
-/* Titres et textes */
-h1 {
+/* Titres */
+.content h1 {
   font-size: 3em;
   text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
 }
 
-p {
+/* Paragraphe */
+.content p {
   font-size: 1.5em;
   margin: 20px 0;
   text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
 }
 
 /* Bouton */
-a.button {
+.content a.button {
   display: inline-block;
   padding: 15px 30px;
   background-color: #ffffffcc;
@@ -61,6 +62,6 @@ a.button {
   transition: background 0.3s;
 }
 
-a.button:hover {
+.content a.button:hover {
   background-color: #fff;
 }
