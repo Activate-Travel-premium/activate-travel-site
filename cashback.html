@@ -3,44 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Simulateur Cashback</title>
+  <title>Simulateur de Cashback</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
-    * {
+    body {
       margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      height: 100%;
-      overflow-x: hidden;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: black;
-    }
-
-    .video-background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      min-width: 100%;
-      min-height: 100%;
-      object-fit: cover;
-      z-index: -1;
-    }
-
-    .content {
-      position: relative;
-      z-index: 1;
-      height: 100vh;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #0d47a1, #1976d2);
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 40px 20px;
     }
 
     h1 {
@@ -48,7 +20,7 @@
       margin-bottom: 10px;
     }
 
-    p.description {
+    p.slogan {
       font-size: 1.2em;
       margin-bottom: 30px;
     }
@@ -59,7 +31,7 @@
       padding: 30px;
       border-radius: 15px;
       max-width: 400px;
-      width: 90%;
+      margin: 0 auto 30px auto;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
@@ -88,98 +60,61 @@
       font-weight: bold;
     }
 
-    .testimonials-section {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      min-height: 500px;
-      text-align: center;
-      color: white;
-      padding: 60px 20px;
-      background: transparent;
-      backdrop-filter: brightness(0.9);
-    }
-
-    .testimonial-video-background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.7;
-      z-index: -1;
-    }
-
     .testimonials {
-      max-width: 700px;
-      margin: auto;
+      margin-top: 50px;
     }
 
     .testimonial {
-      background-color: rgba(0, 0, 0, 0.6);
-      margin: 15px auto;
-      padding: 20px;
+      background-color: #ffffff22;
+      margin: 10px auto;
+      max-width: 500px;
+      padding: 15px;
       border-radius: 10px;
       font-style: italic;
     }
 
-    .btn-back {
-      margin-top: 30px;
+    .btn-premium {
+      margin-top: 40px;
       display: inline-block;
-      padding: 12px 25px;
-      background: #00e676;
+      padding: 15px 25px;
+      background-color: #00e676;
       color: black;
       font-weight: bold;
       text-decoration: none;
       border-radius: 30px;
+      font-size: 1.1em;
     }
   </style>
 </head>
 <body>
 
-  <!-- Vidéo de fond principale -->
-  <video class="video-background" autoplay muted loop playsinline>
-    <source src="https://a7r2epkjwalc416i.public.blob.vercel-storage.com/Activate-Travel-Premium-Fond-HD-16-9-ccEYthQkRMrhHGVS9S9E2mOo1BML2i.mp4" type="video/mp4">
-  </video>
+  <h1>Simulateur de Cashback</h1>
+  <p class="slogan">Calcule combien tu récupères avec ACTIVATE Travel Premium</p>
 
-  <div class="content">
-    <h1>Simulateur de Cashback</h1>
-    <p class="description">Calcule en 1 clic combien tu récupères avec ACTIVATE Travel Premium</p>
-
-    <div class="simulator">
-      <input type="number" id="montant" placeholder="Montant de ta réservation (€)">
-      <button onclick="calculerCashback()">Calculer</button>
-      <div class="result" id="resultat"></div>
-    </div>
-
-    <a href="index.html" class="btn-back">← Retour à l'accueil</a>
+  <div class="simulator">
+    <input type="number" id="montant" placeholder="Montant de ta réservation (€)">
+    <button onclick="calculerCashback()">Calculer</button>
+    <div class="result" id="resultat"></div>
   </div>
 
-  <!-- Deuxième vidéo sous la section cashback -->
-  <section class="testimonials-section">
-    <video class="testimonial-video-background" autoplay muted loop playsinline>
-      <source src="https://a7r2epkjwalc416i.public.blob.vercel-storage.com/11329290-uhd_3840_2160_30fps-Jtsf98GnbvodXbn38n8i0KgFYouA20.mp4" type="video/mp4">
-    </video>
-    <div class="testimonials">
-      <h2>Témoignages clients</h2>
-      <div class="testimonial">“J’ai réservé pour 800 €, j’ai récupéré 120 € en cashback !” – Sarah</div>
-      <div class="testimonial">“Activate m’a permis de voyager ET d’économiser, merci !” – David</div>
-      <div class="testimonial">“J’ai reçu mon cashback en 48h, top !” – Linda</div>
-    </div>
-  </section>
+  <div class="testimonials">
+    <h2>Ils en parlent !</h2>
+    <div class="testimonial">“J'ai réservé pour 800 €, et j'ai reçu 120 € de cashback en quelques jours !” – Sarah</div>
+    <div class="testimonial">“Merci Activate Travel ! J’ai pu économiser sur tous mes voyages.” – Karim</div>
+    <div class="testimonial">“Simplicité + économies = bonheur !” – Laetitia</div>
+  </div>
+
+  <a href="premium.html" class="btn-premium">Je deviens membre premium</a>
 
   <script>
     function calculerCashback() {
       const montant = parseFloat(document.getElementById('montant').value);
       const taux = 0.15;
-      const result = document.getElementById('resultat');
-
-      if (!isNaN(montant) && montant > 0) {
+      if (!isNaN(montant)) {
         const cashback = montant * taux;
-        result.innerHTML = `Tu récupères : <strong>${cashback.toFixed(2)} €</strong> !`;
+        document.getElementById('resultat').innerText = `Tu récupères : ${cashback.toFixed(2)} € !`;
       } else {
-        result.innerHTML = "Merci d’entrer un montant valide.";
+        document.getElementById('resultat').innerText = "";
       }
     }
   </script>
