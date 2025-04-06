@@ -2,122 +2,85 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Simulateur de Cashback</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Activate Travel Premium</title>
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #0d47a1, #1976d2);
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.5);
       color: white;
       text-align: center;
-      padding: 40px 20px;
+      padding: 20px;
     }
 
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
+    .content h1 {
+      font-size: 3em;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
     }
 
-    p.slogan {
-      font-size: 1.2em;
-      margin-bottom: 30px;
-    }
-
-    .simulator {
-      background: white;
-      color: black;
-      padding: 30px;
-      border-radius: 15px;
-      max-width: 400px;
-      margin: 0 auto 30px auto;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-
-    .simulator input {
-      padding: 15px;
-      width: 100%;
-      margin-bottom: 20px;
-      font-size: 1.1em;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
-
-    .simulator button {
-      padding: 12px 30px;
-      font-size: 1em;
-      background-color: #ffca28;
-      border: none;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .result {
+    .content p {
       font-size: 1.5em;
-      margin-top: 20px;
-      font-weight: bold;
+      margin: 20px 0;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
     }
 
-    .testimonials {
-      margin-top: 50px;
-    }
-
-    .testimonial {
-      background-color: #ffffff22;
-      margin: 10px auto;
-      max-width: 500px;
-      padding: 15px;
-      border-radius: 10px;
-      font-style: italic;
-    }
-
-    .btn-premium {
-      margin-top: 40px;
+    .content a.button {
       display: inline-block;
-      padding: 15px 25px;
-      background-color: #00e676;
-      color: black;
-      font-weight: bold;
+      padding: 15px 30px;
+      background-color: #ffffffcc;
+      color: #000;
       text-decoration: none;
+      font-weight: bold;
       border-radius: 30px;
-      font-size: 1.1em;
+      transition: background 0.3s;
+    }
+
+    .content a.button:hover {
+      background-color: #fff;
     }
   </style>
 </head>
 <body>
 
-  <h1>Simulateur de Cashback</h1>
-  <p class="slogan">Calcule combien tu récupères avec ACTIVATE Travel Premium</p>
+  <!-- Vidéo de fond -->
+  <video class="video-background" autoplay muted loop playsinline>
+    <source src="https://a7r2epkjwalc416i.public.blob.vercel-storage.com/Activate-Travel-Premium-Fond-HD-16-9-ccEYthQkRMrhHGVS9S9E2mOo1BML2i.mp4" type="video/mp4">
+    Votre navigateur ne supporte pas la vidéo HTML5.
+  </video>
 
-  <div class="simulator">
-    <input type="number" id="montant" placeholder="Montant de ta réservation (€)">
-    <button onclick="calculerCashback()">Calculer</button>
-    <div class="result" id="resultat"></div>
+  <div class="content">
+    <h1>Activate Travel Premium</h1>
+    <p>Voyages de rêve, cashback, luxe et innovation</p>
+    <a href="cashback.html" class="button">Je découvre</a>
   </div>
-
-  <div class="testimonials">
-    <h2>Ils en parlent !</h2>
-    <div class="testimonial">“J'ai réservé pour 800 €, et j'ai reçu 120 € de cashback en quelques jours !” – Sarah</div>
-    <div class="testimonial">“Merci Activate Travel ! J’ai pu économiser sur tous mes voyages.” – Karim</div>
-    <div class="testimonial">“Simplicité + économies = bonheur !” – Laetitia</div>
-  </div>
-
-  <a href="premium.html" class="btn-premium">Je deviens membre premium</a>
-
-  <script>
-    function calculerCashback() {
-      const montant = parseFloat(document.getElementById('montant').value);
-      const taux = 0.15;
-      if (!isNaN(montant)) {
-        const cashback = montant * taux;
-        document.getElementById('resultat').innerText = `Tu récupères : ${cashback.toFixed(2)} € !`;
-      } else {
-        document.getElementById('resultat').innerText = "";
-      }
-    }
-  </script>
 
 </body>
 </html>
