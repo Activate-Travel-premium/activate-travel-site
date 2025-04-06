@@ -2,132 +2,157 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simulateur de Cashback</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simulateur Cashback</title>
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(#004AAD, #0E75BC);
+    }
+
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      height: 100vh;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       color: white;
       text-align: center;
+      padding: 20px;
     }
 
     h1 {
-      font-size: 2.8em;
-      margin-top: 30px;
+      font-size: 2.5em;
+      margin-bottom: 10px;
     }
 
-    p {
+    p.description {
       font-size: 1.2em;
-      max-width: 90%;
-      margin: auto;
+      margin-bottom: 30px;
     }
 
     .simulator {
       background: white;
       color: black;
-      margin: 30px auto;
-      padding: 20px;
+      padding: 30px;
       border-radius: 15px;
-      max-width: 500px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
-    input {
-      width: 90%;
+    .simulator input {
       padding: 15px;
-      font-size: 1.2em;
+      width: 100%;
+      margin-bottom: 20px;
+      font-size: 1.1em;
       border-radius: 8px;
       border: 1px solid #ccc;
-      margin-bottom: 15px;
     }
 
-    button {
-      padding: 12px 25px;
-      font-size: 1.2em;
-      background-color: #FFC800;
+    .simulator button {
+      padding: 12px 30px;
+      font-size: 1em;
+      background-color: #ffca28;
       border: none;
       border-radius: 8px;
-      cursor: pointer;
       font-weight: bold;
+      cursor: pointer;
     }
 
-    button:hover {
-      background-color: #ffdf32;
-    }
-
-    #result {
+    .result {
       font-size: 1.5em;
       margin-top: 20px;
+      font-weight: bold;
     }
 
     .testimonials {
       margin-top: 40px;
+      max-width: 600px;
+    }
+
+    .testimonial {
+      background-color: #ffffff22;
+      margin: 10px auto;
+      padding: 15px;
+      border-radius: 10px;
       font-style: italic;
-      font-size: 1.1em;
-      padding: 10px 20px;
+      color: #fff;
     }
 
-    .carousel {
-      animation: slide 12s infinite;
-    }
-
-    @keyframes slide {
-      0%, 20% { transform: translateY(0); }
-      25%, 45% { transform: translateY(-100%); }
-      50%, 70% { transform: translateY(-200%); }
-      75%, 95% { transform: translateY(-100%); }
-      100% { transform: translateY(0); }
-    }
-
-    .carousel > div {
-      height: 80px;
-    }
-
-    .back-link {
-      display: block;
-      margin-top: 40px;
+    .btn-back {
+      margin-top: 30px;
+      display: inline-block;
+      padding: 12px 25px;
+      background: #00e676;
+      color: black;
       font-weight: bold;
-      color: yellow;
       text-decoration: none;
+      border-radius: 30px;
     }
   </style>
 </head>
 <body>
-  <h1>Simulateur de Cashback</h1>
-  <p>Calcule combien tu récupères avec ACTIVATE Travel Premium</p>
 
-  <div class="simulator">
-    <input type="number" id="amount" placeholder="Montant de ta réservation en €">
-    <br />
-    <button onclick="calculateCashback()">Calculer</button>
-    <div id="result"></div>
-  </div>
+  <!-- Vidéo de fond -->
+  <video class="video-background" autoplay muted loop playsinline>
+    <source src="https://a7r2epkjwalc416i.public.blob.vercel-storage.com/Activate-Travel-Premium-Fond-HD-16-9-ccEYthQkRMrhHGVS9S9E2mOo1BML2i.mp4" type="video/mp4">
+  </video>
 
-  <div class="testimonials">
-    <div class="carousel">
-      <div>“J'ai réservé pour 800 € et j’ai reçu 120 € de cashback !” – Sarah</div>
-      <div>“Vacances de rêve, cashback reçu en 3 jours !” – David</div>
-      <div>“J’ai gagné 350 € sur mon séjour ! Merci Activate !” – Linda</div>
+  <div class="content">
+    <h1>Simulateur de Cashback</h1>
+    <p class="description">Calcule en 1 clic combien tu récupères avec ACTIVATE Travel Premium</p>
+
+    <div class="simulator">
+      <input type="number" id="montant" placeholder="Montant de ta réservation (€)">
+      <button onclick="calculerCashback()">Calculer</button>
+      <div class="result" id="resultat"></div>
     </div>
-  </div>
 
-  <a class="back-link" href="index.html">← Retour à l'accueil</a>
+    <div class="testimonials">
+      <div class="testimonial">“J’ai réservé pour 800 €, j’ai récupéré 120 € en cashback !” – Sarah</div>
+      <div class="testimonial">“Activate m’a permis de voyager ET d’économiser, merci !” – David</div>
+      <div class="testimonial">“J’ai reçu mon cashback en 48h, top !” – Linda</div>
+    </div>
+
+    <a href="index.html" class="btn-back">← Retour à l'accueil</a>
+  </div>
 
   <script>
-    function calculateCashback() {
-      const amount = parseFloat(document.getElementById('amount').value);
-      const cashbackRate = 0.15;
-      const result = document.getElementById('result');
+    function calculerCashback() {
+      const montant = parseFloat(document.getElementById('montant').value);
+      const taux = 0.15;
+      const result = document.getElementById('resultat');
 
-      if (!isNaN(amount) && amount > 0) {
-        const cashback = amount * cashbackRate;
+      if (!isNaN(montant) && montant > 0) {
+        const cashback = montant * taux;
         result.innerHTML = `Tu récupères : <strong>${cashback.toFixed(2)} €</strong> !`;
       } else {
-        result.innerHTML = "Merci d'entrer un montant valide.";
+        result.innerHTML = \"Merci d’entrer un montant valide.\";
       }
     }
   </script>
+
 </body>
 </html>
