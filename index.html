@@ -21,41 +21,10 @@
       position: fixed;
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
+      min-width: 100%;
+      min-height: 100%;
       object-fit: cover;
-      object-position: center;
-      background-color: black;
       z-index: -1;
-    }
-
-    header {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      z-index: 2;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 50px;
-      background: rgba(0, 0, 0, 0.4);
-      color: white;
-    }
-
-    header h2 {
-      margin: 0;
-      font-size: 1.5em;
-    }
-
-    nav a {
-      margin: 0 15px;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
     }
 
     .content {
@@ -66,9 +35,10 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.5);
       color: white;
       text-align: center;
+      padding: 20px;
     }
 
     .content h1 {
@@ -100,18 +70,6 @@
 </head>
 <body>
 
-  <!-- MENU DE NAVIGATION -->
-  <header>
-    <h2>Activate Travel Premium</h2>
-    <nav>
-      <a href="index.html">Accueil</a>
-      <a href="cashback.html">Cashback</a>
-      <a href="faq.html">FAQ</a>
-      <a href="premium.html">Premium</a>
-      <a href="resultats.html">Résultats</a>
-    </nav>
-  </header>
-
   <!-- Vidéo de fond -->
   <video class="video-background" autoplay muted loop playsinline>
     <source src="https://a7r2epkjwalc416i.public.blob.vercel-storage.com/Activate-Travel-Premium-Fond-HD-16-9-ccEYthQkRMrhHGVS9S9E2mOo1BML2i.mp4" type="video/mp4">
@@ -121,7 +79,7 @@
   <div class="content">
     <h1>Activate Travel Premium</h1>
     <p>Voyages de rêve, cashback, luxe et innovation</p>
-    <a href="#" class="button">Je découvre</a>
+    <a href="cashback.html" class="button">Je découvre</a>
   </div>
 
 </body>
