@@ -13,7 +13,7 @@
 
     html, body {
       height: 100%;
-      overflow: hidden;
+      overflow-x: hidden;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
@@ -87,18 +87,38 @@
       font-weight: bold;
     }
 
+    .testimonials-section {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      text-align: center;
+      color: white;
+      padding: 60px 20px;
+      background-color: black;
+    }
+
+    .testimonial-video-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.3;
+      z-index: -1;
+    }
+
     .testimonials {
-      margin-top: 40px;
-      max-width: 600px;
+      max-width: 700px;
+      margin: auto;
     }
 
     .testimonial {
-      background-color: #ffffff22;
-      margin: 10px auto;
-      padding: 15px;
+      background-color: rgba(0, 0, 0, 0.6);
+      margin: 15px auto;
+      padding: 20px;
       border-radius: 10px;
       font-style: italic;
-      color: #fff;
     }
 
     .btn-back {
@@ -115,7 +135,7 @@
 </head>
 <body>
 
-  <!-- Vidéo de fond -->
+  <!-- Vidéo de fond principale -->
   <video class="video-background" autoplay muted loop playsinline>
     <source src="https://a7r2epkjwalc416i.public.blob.vercel-storage.com/Activate-Travel-Premium-Fond-HD-16-9-ccEYthQkRMrhHGVS9S9E2mOo1BML2i.mp4" type="video/mp4">
   </video>
@@ -130,14 +150,21 @@
       <div class="result" id="resultat"></div>
     </div>
 
+    <a href="index.html" class="btn-back">← Retour à l'accueil</a>
+  </div>
+
+  <!-- Deuxième vidéo sous la section cashback -->
+  <section class="testimonials-section">
+    <video class="testimonial-video-background" autoplay muted loop playsinline>
+      <source src="https://a7r2epkjwalc416i.public.blob.vercel-storage.com/11329290-uhd_3840_2160_30fps-Jtsf98GnbvodXbn38n8i0KgFYouA20.mp4" type="video/mp4">
+    </video>
     <div class="testimonials">
+      <h2>Témoignages clients</h2>
       <div class="testimonial">“J’ai réservé pour 800 €, j’ai récupéré 120 € en cashback !” – Sarah</div>
       <div class="testimonial">“Activate m’a permis de voyager ET d’économiser, merci !” – David</div>
       <div class="testimonial">“J’ai reçu mon cashback en 48h, top !” – Linda</div>
     </div>
-
-    <a href="index.html" class="btn-back">← Retour à l'accueil</a>
-  </div>
+  </section>
 
   <script>
     function calculerCashback() {
@@ -149,7 +176,7 @@
         const cashback = montant * taux;
         result.innerHTML = `Tu récupères : <strong>${cashback.toFixed(2)} €</strong> !`;
       } else {
-        result.innerHTML = \"Merci d’entrer un montant valide.\";
+        result.innerHTML = "Merci d’entrer un montant valide.";
       }
     }
   </script>
