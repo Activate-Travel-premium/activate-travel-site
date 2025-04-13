@@ -3,85 +3,133 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inscription Membre</title>
+  <title>Devenir Membre Premium</title>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
     body, html {
       height: 100%;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      display: flex;
-      justify-content: center;
-      align-items: center;
       color: white;
     }
-    .form-container {
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      max-width: 400px;
+
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
-      backdrop-filter: blur(10px);
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
     }
-    h1 {
+
+    .main-content {
+      padding: 60px 20px;
       text-align: center;
-      margin-bottom: 2rem;
+      background-color: rgba(0, 0, 0, 0.5);
+      min-height: 100vh;
     }
-    label {
-      display: block;
-      margin-top: 1rem;
-      font-weight: bold;
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
     }
-    input {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
+
+    .slogan {
+      font-size: 1.2em;
+      margin-bottom: 40px;
     }
-    button {
-      width: 100%;
-      margin-top: 2rem;
-      padding: 12px;
-      background-color: #00ffcc;
+
+    .premium-benefits {
+      margin: 20px auto;
+      max-width: 600px;
+      text-align: left;
+    }
+
+    .premium-benefits h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .premium-benefits ul {
+      list-style: none;
+      line-height: 2;
+    }
+
+    .cta {
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .cta button {
+      padding: 12px 24px;
+      font-size: 1em;
+      background-color: white;
       color: black;
-      font-weight: bold;
       border: none;
       border-radius: 25px;
       cursor: pointer;
-      font-size: 1rem;
-      transition: background-color 0.3s, transform 0.2s;
+      font-weight: bold;
+      transition: transform 0.3s ease, background-color 0.3s ease;
     }
-    button:hover {
-      background-color: #00e6b8;
+
+    .cta button:hover {
       transform: scale(1.05);
+      background-color: #f0f0f0;
+    }
+
+    a.cta-link {
+      text-decoration: none;
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      color: white;
+    }
+
+    .footer-link {
+      display: block;
+      margin-top: 10px;
+      color: white;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <div class="form-container">
-    <h1>Créer un compte</h1>
-    <form onsubmit="event.preventDefault(); alert('Compte créé avec succès !');">
-      <label for="prenom">Prénom</label>
-      <input type="text" id="prenom" name="prenom" required>
+  <video class="video-background" autoplay muted loop playsinline>
+    <source src="fond-premium.mp4" type="video/mp4">
+  </video>
 
-      <label for="nom">Nom</label>
-      <input type="text" id="nom" name="nom" required>
+  <div class="main-content">
+    <h1>Deviens Membre Premium</h1>
+    <p class="slogan">Accès à des réductions exclusives, cashback plus élevé, et bonus de bienvenue !</p>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+    <section class="premium-benefits">
+      <h2>Avantages Premium :</h2>
+      <ul>
+        <li>✅ Jusqu’à 10% de cashback sur chaque voyage</li>
+        <li>✅ Accès prioritaire aux meilleures offres</li>
+        <li>✅ Assistance IA Horeb dédiée 24h/24</li>
+        <li>✅ Bonus de bienvenue de 100 Activate Points</li>
+      </ul>
+    </section>
 
-      <label for="motdepasse">Mot de passe</label>
-      <input type="password" id="motdepasse" name="motdepasse" required>
+    <section class="cta">
+      <a href="inscription.html" class="cta-link">
+        <button>Créer mon compte Premium</button>
+      </a>
+    </section>
 
-      <button type="submit">Créer mon compte</button>
-    </form>
+    <footer>
+      <p>© 2025 ACTIVATE Travel Premium. Tous droits réservés.</p>
+      <a href="index.html" class="footer-link">← Retour à l’accueil</a>
+    </footer>
   </div>
 </body>
 </html>
