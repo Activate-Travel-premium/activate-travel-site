@@ -4,47 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cashback | Activate Travel Premium</title>
-  <link rel="stylesheet" href="style.css">
   <style>
     body, html {
       margin: 0;
       padding: 0;
       height: 100%;
       font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #00bcd4, #1e88e5);
       color: white;
       overflow-x: hidden;
-      background: #111;
-    }
-    .video-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-      filter: brightness(0.6);
     }
     .container {
       padding: 4rem 2rem;
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(8px);
+      max-width: 900px;
+      margin: 0 auto;
     }
     .title {
       text-align: center;
       font-size: 2.8rem;
       margin-bottom: 1rem;
       font-weight: bold;
-      text-shadow: 1px 1px 2px #000;
     }
     .subtitle {
       text-align: center;
       font-size: 1.4rem;
       margin-bottom: 2rem;
-      text-shadow: 1px 1px 2px #000;
     }
     .simulator {
-      background: #ffffff22;
+      background: rgba(255, 255, 255, 0.1);
       padding: 2rem;
       border-radius: 12px;
       max-width: 500px;
@@ -60,10 +47,6 @@
       width: 80%;
       margin-bottom: 1rem;
     }
-    .simulator input::placeholder {
-      color: #888;
-      font-style: italic;
-    }
     .simulator-result {
       font-size: 1.6rem;
       font-weight: bold;
@@ -74,74 +57,29 @@
       display: inline-block;
       color: #00ff99;
     }
-    .testimonials {
-      max-width: 600px;
-      margin: 3rem auto;
-      padding-top: 2rem;
-      position: relative;
-    }
-    .testimonial {
-      background: #ffffff22;
-      color: white;
-      padding: 1.5rem;
-      border-radius: 8px;
-      font-style: italic;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-      position: absolute;
-      opacity: 0;
-      transition: opacity 0.5s ease;
-      width: 100%;
-    }
-    .testimonial.active {
-      opacity: 1;
-      position: relative;
-    }
     .cta {
       text-align: center;
-      margin-top: 6rem;
+      margin-top: 4rem;
     }
     .cta a {
-      background: #00ff99;
-      color: #000;
+      background: #ffffff;
+      color: #1e88e5;
       padding: 1rem 2rem;
       font-size: 1.2rem;
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
       box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-      transition: 0.3s;
     }
     .cta a:hover {
-      background: #00cc77;
-    }
-    .footer-text {
-      text-align: center;
-      font-size: 1rem;
-      margin-top: 3rem;
-      color: #ccc;
-    }
-    @media (max-width: 600px) {
-      .title {
-        font-size: 2rem;
-      }
-      .subtitle {
-        font-size: 1.1rem;
-      }
-      .simulator {
-        padding: 1rem;
-      }
+      background: #e0e0e0;
     }
   </style>
 </head>
 <body>
-  <video autoplay muted loop class="video-bg">
-    <source src="videos/fond-vacances.mp4" type="video/mp4">
-    Votre navigateur ne supporte pas la vidéo.
-  </video>
-
   <div class="container">
     <h1 class="title">Gagne de l'argent sur chaque voyage</h1>
-    <p class="subtitle">Avec Activate Travel Premium, chaque réservation te rapporte jusqu’à <strong>15 % de cashback</strong> !</p>
+    <p class="subtitle">Jusqu’à 15 % de cashback sur tes réservations</p>
 
     <div class="simulator">
       <h2>💰 Montant de ta réservation (€)</h2>
@@ -149,31 +87,14 @@
       <div class="simulator-result" id="resultat">Cashback : 0 €</div>
     </div>
 
-    <div class="testimonials">
-      <div class="testimonial active">
-        "Grâce à Activate Travel, j’ai économisé 97 € sur mon séjour à Dubaï !" – Sarah M.
-      </div>
-      <div class="testimonial">
-        "C’est simple : je réserve, je gagne. Activate a changé ma façon de voyager !" – Julien T.
-      </div>
-      <div class="testimonial">
-        "J’ai réservé mon hôtel avec Activate et j’ai récupéré 45 € sans rien faire !" – Laura P.
-      </div>
-    </div>
-
     <div class="cta">
-      <a href="premium.html">💎 Devenir Membre Premium</a>
+      <a href="premium.html">💸 Devenir Membre Premium</a>
     </div>
-
-    <p class="footer-text">Chaque voyage devient une opportunité de gagner. Pourquoi payer plein pot ailleurs ?</p>
   </div>
 
   <script>
     const montantInput = document.getElementById('montant');
     const resultatDiv = document.getElementById('resultat');
-    const testimonials = document.querySelectorAll('.testimonial');
-    let current = 0;
-
     montantInput.addEventListener('input', () => {
       const montant = parseFloat(montantInput.value);
       if (!isNaN(montant)) {
@@ -183,12 +104,6 @@
         resultatDiv.textContent = 'Cashback : 0 €';
       }
     });
-
-    setInterval(() => {
-      testimonials[current].classList.remove('active');
-      current = (current + 1) % testimonials.length;
-      testimonials[current].classList.add('active');
-    }, 5000);
   </script>
 </body>
 </html>
