@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inscription Membre Premium</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Devenir Membre Premium</title>
   <style>
     * {
       margin: 0;
@@ -27,52 +27,59 @@
       z-index: -1;
     }
 
-    .form-container {
+    .main-content {
       background-color: rgba(0, 0, 0, 0.6);
       padding: 40px;
-      max-width: 400px;
+      max-width: 600px;
       margin: 100px auto;
       border-radius: 15px;
       text-align: center;
     }
 
     h1 {
+      font-size: 2.5em;
       margin-bottom: 20px;
     }
 
-    form {
-      display: flex;
-      flex-direction: column;
+    .slogan {
+      font-size: 1.1em;
+      margin-bottom: 30px;
     }
 
-    input {
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 5px;
-      border: none;
+    .benefits {
+      text-align: left;
+      margin-bottom: 30px;
+    }
+
+    .benefits li {
+      margin-bottom: 10px;
+    }
+
+    .btn-premium {
+      padding: 12px 24px;
       font-size: 1em;
-    }
-
-    button {
-      margin-top: 20px;
-      padding: 12px;
       background-color: white;
       color: black;
       border: none;
       border-radius: 25px;
-      font-weight: bold;
       cursor: pointer;
-      transition: background-color 0.3s, transform 0.3s;
+      font-weight: bold;
+      transition: transform 0.3s ease;
     }
 
-    button:hover {
-      background-color: #e0e0e0;
-      transform: scale(1.05);
+    .btn-premium:hover {
+      transform: scale(1.1);
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 0.9em;
     }
 
     .footer-link {
-      margin-top: 20px;
-      display: block;
+      display: inline-block;
+      margin-top: 10px;
       color: white;
       text-decoration: underline;
     }
@@ -83,16 +90,23 @@
     <source src="fond-premium.mp4" type="video/mp4">
   </video>
 
-  <div class="form-container">
-    <h1>Inscris-toi maintenant</h1>
-    <form action="#" method="post">
-      <input type="text" placeholder="Prénom" required>
-      <input type="text" placeholder="Nom" required>
-      <input type="email" placeholder="Email" required>
-      <input type="password" placeholder="Mot de passe" required>
-      <button type="submit">Créer mon compte</button>
-    </form>
-    <a href="index.html" class="footer-link">← Retour à l’accueil</a>
+  <div class="main-content">
+    <h1>Deviens Membre Premium</h1>
+    <p class="slogan">Accès à des réductions exclusives, cashback plus élevé, et bonus de bienvenue !</p>
+
+    <ul class="benefits">
+      <li>✅ Jusqu’à 10% de cashback sur chaque voyage</li>
+      <li>✅ Accès prioritaire aux meilleures offres</li>
+      <li>✅ Assistance IA Horeb dédiée 24h/24</li>
+      <li>✅ Bonus de bienvenue de 100 Activate Points</li>
+    </ul>
+
+    <button class="btn-premium" onclick="window.location.href='inscription.html'">Créer mon compte Premium</button>
+
+    <footer>
+      <p>© 2025 ACTIVATE Travel Premium. Tous droits réservés.</p>
+      <a href="index.html" class="footer-link">← Retour à l’accueil</a>
+    </footer>
   </div>
 </body>
 </html>
