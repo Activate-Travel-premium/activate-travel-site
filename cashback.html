@@ -15,13 +15,13 @@
       overflow-x: hidden;
       background: #111;
     }
-    .image-bg {
+    .video-bg {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: url('/images/fond-vacances.jpg') no-repeat center center/cover;
+      object-fit: cover;
       z-index: -1;
       filter: brightness(0.6);
     }
@@ -134,7 +134,10 @@
   </style>
 </head>
 <body>
-  <div class="image-bg"></div>
+  <video autoplay muted loop class="video-bg">
+    <source src="videos/fond-vacances.mp4" type="video/mp4">
+    Votre navigateur ne supporte pas la vidéo.
+  </video>
 
   <div class="container">
     <h1 class="title">Gagne de l'argent sur chaque voyage</h1>
