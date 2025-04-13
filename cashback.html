@@ -73,9 +73,20 @@
       text-decoration: none;
       font-weight: bold;
       box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      display: inline-block;
     }
     .cta a:hover {
       background: #e0e0e0;
+      transform: scale(1.05);
+    }
+    #testimonials {
+      margin-top: 4rem;
+      text-align: center;
+      font-style: italic;
+      font-size: 1.2rem;
+      min-height: 60px;
+      transition: opacity 0.8s ease-in-out;
     }
   </style>
 </head>
@@ -93,6 +104,8 @@
     <div class="cta">
       <a href="premium.html">💸 Devenir Membre Premium</a>
     </div>
+
+    <div id="testimonials"></div>
   </div>
 
   <script>
@@ -107,6 +120,29 @@
         resultatDiv.textContent = 'Cashback : 0 €';
       }
     });
+
+    // Témoignages défilants
+    const testimonials = [
+      "Grâce à Activate Travel, j’ai économisé 97 € sur mon séjour à Dubaï ! – Sarah M.",
+      "C’est simple : je réserve, je gagne. Activate a changé ma façon de voyager ! – Julien T.",
+      "15 % de cashback sur mes vacances en Espagne ? C’est réel. Merci Activate ! – Aïcha B.",
+      "J’ai économisé sur mes vols et hôtels. Activate = voyage intelligent. – Marc G.",
+    ];
+
+    const testimonialDiv = document.getElementById("testimonials");
+    let index = 0;
+
+    function showTestimonial() {
+      testimonialDiv.style.opacity = 0;
+      setTimeout(() => {
+        testimonialDiv.textContent = testimonials[index];
+        testimonialDiv.style.opacity = 1;
+        index = (index + 1) % testimonials.length;
+      }, 500);
+    }
+
+    showTestimonial();
+    setInterval(showTestimonial, 4000);
   </script>
 </body>
 </html>
