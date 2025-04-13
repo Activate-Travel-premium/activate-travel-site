@@ -3,135 +3,131 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simulateur de Cashback</title>
+  <title>Cashback | Activate Travel Premium</title>
+  <link rel="stylesheet" href="style.css">
   <style>
-    * {
+    body, html {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
       height: 100%;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: Arial, sans-serif;
       color: white;
-      text-align: center;
-      background-color: black;
+      overflow-x: hidden;
     }
-
-    body {
-      background-image: url('https://cdn.pixabay.com/photo/2016/11/29/09/15/money-1869792_1280.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-    }
-
-    .overlay {
-      background: rgba(0, 0, 0, 0.3);
+    .video-bg {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
     }
-
-    .content {
-      position: relative;
-      z-index: 1;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
+    .container {
+      padding: 4rem 2rem;
+      background: rgba(0, 0, 0, 0.6);
     }
-
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-    }
-
-    .form {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    input[type="number"] {
-      padding: 10px;
-      border-radius: 5px;
-      border: none;
-      font-size: 1em;
-    }
-
-    button {
-      padding: 10px 20px;
-      background-color: #00e6ac;
-      border: none;
-      border-radius: 5px;
-      font-size: 1em;
+    .title {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
       font-weight: bold;
-      cursor: pointer;
-      color: white;
     }
-
-    .result {
-      margin-bottom: 20px;
-      background: rgba(0, 0, 0, 0.4);
-      padding: 15px;
-      border-radius: 10px;
-      max-width: 90%;
-      min-height: 40px;
+    .subtitle {
+      text-align: center;
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
     }
-
-    .back-btn {
-      padding: 10px 20px;
+    .simulator {
+      background: #ffffff22;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 500px;
+      margin: 2rem auto;
+      text-align: center;
+    }
+    .simulator input {
+      padding: 0.6rem;
+      font-size: 1rem;
       border: none;
-      border-radius: 20px;
-      background: white;
-      color: black;
+      border-radius: 6px;
+      width: 80%;
+      margin-bottom: 1rem;
+    }
+    .simulator-result {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      color: #00ff99;
+    }
+    .testimonials {
+      max-width: 900px;
+      margin: auto;
+      padding-top: 2rem;
+    }
+    .testimonial {
+      background: #ffffff22;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+    }
+    .cta {
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .cta a {
+      background: #00ff99;
+      color: #000;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      text-decoration: none;
       font-weight: bold;
-      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <div class="overlay"></div>
-  <div class="content">
-    <h1>Simulateur de Cashback</h1>
-    <div class="form">
-      <input type="number" id="montant" placeholder="Montant en €">
-      <button onclick="calculerCashback()">Calculer</button>
+  <video autoplay muted loop class="video-bg">
+    <source src="/videos/fond-vacances.mp4" type="video/mp4">
+    Votre navigateur ne supporte pas la vidéo.
+  </video>
+
+  <div class="container">
+    <h1 class="title">Gagne de l'argent sur chaque voyage</h1>
+    <p class="subtitle">Avec Activate Travel Premium, chaque réservation te rapporte jusqu’à <strong>15 % de cashback</strong> !</p>
+
+    <div class="simulator">
+      <h2>💰 Simulateur de Cashback</h2>
+      <input type="number" id="montant" placeholder="Montant de ta réservation (€)">
+      <div class="simulator-result" id="resultat">Cashback : 0 €</div>
     </div>
-    <div class="result" id="resultat">
-      “J'ai réservé mes vacances et j'ai reçu 150€ en cashback. Activate Travel Premium est incroyable !”
+
+    <div class="testimonials">
+      <div class="testimonial">
+        "Grâce à Activate Travel, j’ai économisé 97 € sur mon séjour à Dubaï !" – Sarah M.
+      </div>
+      <div class="testimonial">
+        "C’est simple : je réserve, je gagne. Activate a changé ma façon de voyager !" – Julien T.
+      </div>
     </div>
-    <button class="back-btn" onclick="window.location.href='index.html'">Retour à l'accueil</button>
+
+    <div class="cta">
+      <a href="premium.html">💎 Devenir Membre Premium</a>
+    </div>
   </div>
 
   <script>
-    const temoignages = [
-      "“J'ai réservé mes vacances et j'ai reçu 150€ en cashback. Activate Travel Premium est incroyable !”",
-      "“Grâce au cashback, j’ai pu ajouter une excursion en plus sans frais.” – Julie",
-      "“J’ai réservé pour 800 €, et j’ai eu 120 € de cashback.” – Sarah",
-      "“Activate m’a reversé 180 € de cashback en 48h. Bluffant !” – Inès",
-      "“C’est simple, automatique, et rapide. Merci !” – Karim"
-    ];
+    const montantInput = document.getElementById('montant');
+    const resultatDiv = document.getElementById('resultat');
 
-    let indexTemoignage = 0;
-    setInterval(() => {
-      document.getElementById('resultat').innerText = temoignages[indexTemoignage];
-      indexTemoignage = (indexTemoignage + 1) % temoignages.length;
-    }, 5000);
-
-    function calculerCashback() {
-      const montant = document.getElementById('montant').value;
-      const pourcentage = 0.15;
-      const cashback = (montant * pourcentage).toFixed(2);
-      document.getElementById('resultat').innerHTML = `Tu récupères : <strong>${cashback} €</strong> !`;
-    }
+    montantInput.addEventListener('input', () => {
+      const montant = parseFloat(montantInput.value);
+      if (!isNaN(montant)) {
+        const cashback = (montant * 0.15).toFixed(2);
+        resultatDiv.textContent = `Cashback : ${cashback} €`;
+      } else {
+        resultatDiv.textContent = 'Cashback : 0 €';
+      }
+    });
   </script>
 </body>
 </html>
