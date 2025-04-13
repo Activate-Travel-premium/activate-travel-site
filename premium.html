@@ -1,35 +1,133 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Devenir Membre Premium</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    .main-content {
+      position: relative;
+      z-index: 1;
+      padding: 60px 20px;
+      color: white;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    .slogan {
+      font-size: 1.2em;
+      margin-bottom: 40px;
+    }
+
+    .premium-benefits {
+      margin: 20px auto;
+      max-width: 600px;
+      text-align: left;
+    }
+
+    .premium-benefits h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .premium-benefits ul {
+      list-style: none;
+      line-height: 2;
+    }
+
+    .cta {
+      margin: 40px 0;
+    }
+
+    .cta button {
+      padding: 12px 24px;
+      font-size: 1em;
+      background-color: white;
+      color: black;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      color: white;
+    }
+
+    .footer-link {
+      display: block;
+      margin-top: 10px;
+      color: white;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-  <header>
+  <video class="video-background" autoplay muted loop playsinline>
+    <source src="https://w2uaa5d3rexkzqsp.public.blob.vercel-storage.com/Activate-Travel-Premium-Fond-HD-16-9-2myKSGyJxS06bvPH20Eyuz5zC0Vhr5.mp4" type="video/mp4">
+  </video>
+  <div class="overlay"></div>
+
+  <div class="main-content">
     <h1>Deviens Membre Premium</h1>
     <p class="slogan">Accès à des réductions exclusives, cashback plus élevé, et bonus de bienvenue !</p>
-  </header>
 
-  <section class="premium-benefits">
-    <h2>Avantages Premium :</h2>
-    <ul>
-      <li>✅ Jusqu’à 10% de cashback sur chaque voyage</li>
-      <li>✅ Accès prioritaire aux meilleures offres</li>
-      <li>✅ Assistance IA Horeb dédiée 24h/24</li>
-      <li>✅ Bonus de bienvenue de 100 Activate Points</li>
-    </ul>
-  </section>
+    <section class="premium-benefits">
+      <h2>Avantages Premium :</h2>
+      <ul>
+        <li>✅ Jusqu’à 10% de cashback sur chaque voyage</li>
+        <li>✅ Accès prioritaire aux meilleures offres</li>
+        <li>✅ Assistance IA Horeb dédiée 24h/24</li>
+        <li>✅ Bonus de bienvenue de 100 Activate Points</li>
+      </ul>
+    </section>
 
-  <section class="cta">
-    <button onclick="alert('Lien vers inscription prochainement actif')">Créer mon compte Premium</button>
-  </section>
+    <section class="cta">
+      <button onclick="alert('Lien vers inscription prochainement actif')">Créer mon compte Premium</button>
+    </section>
 
-  <footer>
-    <p>© 2025 ACTIVATE Travel Premium. Tous droits réservés.</p>
-    <a href="index.html" class="footer-link">← Retour à l’accueil</a>
-  </footer>
+    <footer>
+      <p>© 2025 ACTIVATE Travel Premium. Tous droits réservés.</p>
+      <a href="index.html" class="footer-link">← Retour à l’accueil</a>
+    </footer>
+  </div>
 </body>
 </html>
