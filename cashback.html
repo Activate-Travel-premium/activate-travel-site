@@ -15,16 +15,15 @@
       overflow-x: hidden;
       background: #111;
     }
-    .video-bg {
+    .image-bg {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      background: url('/images/fond-vacances.jpg') no-repeat center center/cover;
       z-index: -1;
       filter: brightness(0.6);
-      background: url('/images/fond-vacances.jpg') no-repeat center center/cover;
     }
     .container {
       padding: 4rem 2rem;
@@ -135,11 +134,7 @@
   </style>
 </head>
 <body>
-  <div class="video-bg">
-    <video autoplay muted loop style="width:100%; height:100%; object-fit:cover;">
-      <source src="/videos/fond-vacances.mp4" type="video/mp4">
-    </video>
-  </div>
+  <div class="image-bg"></div>
 
   <div class="container">
     <h1 class="title">Gagne de l'argent sur chaque voyage</h1>
