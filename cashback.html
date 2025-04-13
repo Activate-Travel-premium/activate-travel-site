@@ -24,6 +24,7 @@
       object-fit: cover;
       z-index: -1;
       filter: brightness(0.6);
+      background: url('/images/fond-vacances.jpg') no-repeat center center/cover;
     }
     .container {
       padding: 4rem 2rem;
@@ -134,10 +135,11 @@
   </style>
 </head>
 <body>
-  <video autoplay muted loop class="video-bg">
-    <source src="/videos/fond-vacances.mp4" type="video/mp4">
-    Votre navigateur ne supporte pas la vidéo.
-  </video>
+  <div class="video-bg">
+    <video autoplay muted loop style="width:100%; height:100%; object-fit:cover;">
+      <source src="/videos/fond-vacances.mp4" type="video/mp4">
+    </video>
+  </div>
 
   <div class="container">
     <h1 class="title">Gagne de l'argent sur chaque voyage</h1>
