@@ -13,7 +13,7 @@
       font-family: Arial, sans-serif;
       color: white;
       overflow-x: hidden;
-      background: #111; /* fallback */
+      background: #111;
     }
     .video-bg {
       position: fixed;
@@ -76,22 +76,30 @@
       color: #00ff99;
     }
     .testimonials {
-      max-width: 900px;
+      max-width: 600px;
       margin: 3rem auto;
       padding-top: 2rem;
+      position: relative;
     }
     .testimonial {
       background: #ffffff22;
       color: white;
       padding: 1.5rem;
-      margin-bottom: 1rem;
       border-radius: 8px;
       font-style: italic;
       box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      position: absolute;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      width: 100%;
+    }
+    .testimonial.active {
+      opacity: 1;
+      position: relative;
     }
     .cta {
       text-align: center;
-      margin-top: 3rem;
+      margin-top: 6rem;
     }
     .cta a {
       background: #00ff99;
@@ -143,11 +151,14 @@
     </div>
 
     <div class="testimonials">
-      <div class="testimonial">
+      <div class="testimonial active">
         "Grâce à Activate Travel, j’ai économisé 97 € sur mon séjour à Dubaï !" – Sarah M.
       </div>
       <div class="testimonial">
         "C’est simple : je réserve, je gagne. Activate a changé ma façon de voyager !" – Julien T.
+      </div>
+      <div class="testimonial">
+        "J’ai réservé mon hôtel avec Activate et j’ai récupéré 45 € sans rien faire !" – Laura P.
       </div>
     </div>
 
@@ -161,6 +172,8 @@
   <script>
     const montantInput = document.getElementById('montant');
     const resultatDiv = document.getElementById('resultat');
+    const testimonials = document.querySelectorAll('.testimonial');
+    let current = 0;
 
     montantInput.addEventListener('input', () => {
       const montant = parseFloat(montantInput.value);
@@ -171,6 +184,12 @@
         resultatDiv.textContent = 'Cashback : 0 €';
       }
     });
+
+    setInterval(() => {
+      testimonials[current].classList.remove('active');
+      current = (current + 1) % testimonials.length;
+      testimonials[current].classList.add('active');
+    }, 5000);
   </script>
 </body>
 </html>
