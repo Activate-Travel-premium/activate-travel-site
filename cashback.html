@@ -18,10 +18,10 @@
       position: fixed;
       top: 0;
       left: 0;
-      min-width: 100%;
-      min-height: 100%;
-      z-index: -1;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
+      z-index: -1;
       filter: brightness(0.6);
     }
     .container {
@@ -71,7 +71,7 @@
     }
     .testimonials {
       max-width: 900px;
-      margin: auto;
+      margin: 3rem auto;
       padding-top: 2rem;
     }
     .testimonial {
@@ -80,6 +80,7 @@
       margin-bottom: 1rem;
       border-radius: 8px;
       font-style: italic;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     }
     .cta {
       text-align: center;
@@ -99,6 +100,12 @@
     .cta a:hover {
       background: #00cc77;
     }
+    .footer-text {
+      text-align: center;
+      font-size: 1rem;
+      margin-top: 3rem;
+      color: #ccc;
+    }
     @media (max-width: 600px) {
       .title {
         font-size: 2rem;
@@ -114,7 +121,7 @@
 </head>
 <body>
   <video autoplay muted loop class="video-bg">
-    <source src="/videos/fond-vacances.mp4" type="video/mp4">
+    <source src="videos/fond-vacances.mp4" type="video/mp4">
     Votre navigateur ne supporte pas la vidéo.
   </video>
 
@@ -123,8 +130,8 @@
     <p class="subtitle">Avec Activate Travel Premium, chaque réservation te rapporte jusqu’à <strong>15 % de cashback</strong> !</p>
 
     <div class="simulator">
-      <h2>💰 Simulateur de Cashback</h2>
-      <input type="number" id="montant" placeholder="Montant de ta réservation (€)">
+      <h2>💰 Montant de ta réservation (€)</h2>
+      <input type="number" id="montant" placeholder="Ex : 300">
       <div class="simulator-result" id="resultat">Cashback : 0 €</div>
     </div>
 
@@ -140,6 +147,8 @@
     <div class="cta">
       <a href="premium.html">💎 Devenir Membre Premium</a>
     </div>
+
+    <p class="footer-text">Chaque voyage devient une opportunité de gagner. Pourquoi payer plein pot ailleurs ?</p>
   </div>
 
   <script>
