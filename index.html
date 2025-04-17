@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Activate Travel Premium</title>
   <style>
     * {
@@ -10,10 +10,12 @@
       padding: 0;
       box-sizing: border-box;
     }
+
     body, html {
       height: 100%;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+
     .video-background {
       position: fixed;
       top: 0;
@@ -23,6 +25,7 @@
       object-fit: cover;
       z-index: -1;
     }
+
     .navbar {
       position: fixed;
       top: 0;
@@ -35,15 +38,18 @@
       padding: 1rem;
       z-index: 10;
     }
+
     .navbar a {
       color: white;
       text-decoration: none;
       font-weight: bold;
       transition: color 0.3s ease;
     }
+
     .navbar a:hover {
       color: #00ffcc;
     }
+
     .main-content {
       height: 100vh;
       display: flex;
@@ -55,15 +61,18 @@
       background: rgba(0, 0, 0, 0.4);
       padding-top: 60px;
     }
+
     h1 {
       font-size: 3em;
       margin-bottom: 20px;
     }
+
     p {
       font-size: 1.2em;
       margin-bottom: 30px;
       text-align: center;
     }
+
     .btn {
       padding: 12px 24px;
       font-size: 1em;
@@ -75,6 +84,7 @@
       font-weight: bold;
       transition: transform 0.3s ease;
     }
+
     .btn:hover {
       transform: scale(1.05);
     }
@@ -91,9 +101,9 @@
     <a href="contact.html">Contact</a>
   </div>
 
-  <!-- VIDÉO DE FOND -->
+  <!-- VIDÉO DE FOND (Cloudinary) -->
   <video class="video-background" autoplay muted loop playsinline>
-    <source src="https://w2uaa5d3rexkzqsp.public.blob.vercel-storage.com/Activate-Travel-Premium-Fond-HD-16-9-2myKSGyJxS06bvPH20Eyuz5zC0Vhr5.mp4" type="video/mp4">
+    <source src="https://res.cloudinary.com/dia45rav3/video/upload/v1744900108/fondplage_zteu7v.mp4" type="video/mp4">
   </video>
 
   <!-- CONTENU PRINCIPAL -->
