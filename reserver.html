@@ -1,20 +1,129 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Réserver | Activate Travel Premium</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 1rem;
+      z-index: 10;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      color: #00ffcc;
+    }
+
+    .main-content {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.4);
+      padding-top: 80px;
+    }
+
+    h1 {
+      font-size: 2.8em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+    }
+
+    ul li {
+      margin: 10px 0;
+    }
+
+    ul a {
+      color: white;
+      font-size: 1.2em;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    ul a:hover {
+      color: #00ffcc;
+    }
+  </style>
 </head>
 <body>
-  <h1>Réserver votre voyage</h1>
-  <p>Choisissez votre catégorie :</p>
 
-  <ul>
-    <li><a href="https://www.skyscanner.fr" target="_blank">✈️ Réserver un vol</a></li>
-    <li><a href="https://www.booking.com" target="_blank">🏨 Réserver un hôtel</a></li>
-    <li><a href="https://www.rentalcars.com" target="_blank">🚗 Louer une voiture</a></li>
-    <li><a href="https://www.cruisedirect.com" target="_blank">🚢 Réserver une croisière</a></li>
-  </ul>
+  <!-- MENU -->
+  <div class="navbar">
+    <a href="index.html">Accueil</a>
+    <a href="reserver.html">Réserver</a>
+    <a href="resultats.html">Rechercher</a>
+    <a href="cashback.html">Cashback</a>
+    <a href="premium.html">Premium</a>
+    <a href="contact.html">Contact</a>
+  </div>
 
-  <p>Bientôt, vous pourrez tout faire ici avec vos avantages cashback !</p>
+  <!-- VIDÉO DE FOND -->
+  <video class="video-background" autoplay muted loop playsinline>
+    <source src="https://res.cloudinary.com/dia45rav3/video/upload/v1744900108/fondplage_zteu7v.mp4" type="video/mp4">
+  </video>
+
+  <!-- CONTENU PRINCIPAL -->
+  <div class="main-content">
+    <h1>Réserver votre voyage</h1>
+    <p>Choisissez votre catégorie :</p>
+    <ul>
+      <li><a href="https://www.skyscanner.fr" target="_blank">✈️ Réserver un vol</a></li>
+      <li><a href="https://www.booking.com" target="_blank">🏨 Réserver un hôtel</a></li>
+      <li><a href="https://www.rentalcars.com" target="_blank">🚗 Louer une voiture</a></li>
+      <li><a href="https://www.cruisedirect.com" target="_blank">🛳️ Réserver une croisière</a></li>
+    </ul>
+    <p style="margin-top: 30px;">Bientôt, vous pourrez tout faire ici avec vos avantages cashback !</p>
+  </div>
+
 </body>
 </html>
