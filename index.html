@@ -1,6 +1,3 @@
-# Let's generate the updated HTML content by inserting the verification text inside the main-content div
-
-html_content = """
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -113,20 +110,8 @@ html_content = """
   <div class="main-content">
     <h1>Activate Travel Premium</h1>
     <p>Voyages de rêve, cashback, luxe et innovation</p>
-
-    <!-- TEXTE POUR LA VÉRIFICATION -->
-    <p>Impact-Site-Verification: 4ef99d6d-3eed-4a6a-9ef8-b30a8024286d</p>
-
     <button class="btn" onclick="window.location.href='cashback.html'">Je découvre</button>
   </div>
 
 </body>
 </html>
-"""
-
-# Save to file
-output_path = "/mnt/data/index.html"
-with open(output_path, "w", encoding="utf-8") as f:
-    f.write(html_content)
-
-output_path
